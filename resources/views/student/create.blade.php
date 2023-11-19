@@ -8,7 +8,18 @@
 </head>
 <body>
     <h1>Create a Student</h1>
-    <form method="post" action="{{route('student.store')}}">
+    <div>
+        @if($errors->any())
+        <ul>
+            @foreach ( $errors->all() as $error)
+                <li> {{$error}}</li>
+            @endforeach
+
+
+        </ul>
+        @endif
+    </div>
+    <form method="post" action="{{route('student.stores')}}">
         @csrf
         @method('post')
 <div>
@@ -26,7 +37,7 @@
 </div>
 <div>
     <label>Month</label>
-    <input type="month" name="month" placeholder="month">
+    <input type="number" name="month" placeholder="month">
 </div>
 <div>
     <label>Year</label>

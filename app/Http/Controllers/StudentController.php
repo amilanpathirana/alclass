@@ -13,9 +13,8 @@ class StudentController extends Controller
     public function create(){
         return view('student.create');
     }
-    public function store(Request $request){
+    public function stores(Request $request){
         $data=$request->validate([
-            'issued_at'=>'required',
             'qrcode'=>'required',
             'subject'=>'required',
             'teacher'=>'required',
